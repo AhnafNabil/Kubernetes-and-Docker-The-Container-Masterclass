@@ -17,6 +17,7 @@ This command lists all existing Docker networks.
 
 
 ![connection check](./images/out-5.png)
+
 ### 2. Create a Bridge Network
 
 Create a new bridge network called `net-bridge` with specific subnet and IP range:
@@ -35,6 +36,7 @@ Run a container named `cont_database` from the `redis` image and connect it to `
 ```bash
 docker run -d --name cont_database --network net-bridge redis
 ```
+
 This command runs a new container named `cont_database` from the `redis` image in detached mode, connecting it to `net-bridge`.
 
 Fetch its IP address:

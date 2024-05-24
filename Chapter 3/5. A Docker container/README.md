@@ -28,6 +28,8 @@ Containers can communicate with each other over a network. This communication is
 
 Docker containers follow a Copy-on-Write (CoW) policy. This means that when a container modifies a file, a copy of the file is made in the writable layer. The original file in the underlying read-only layer remains unchanged. This approach helps in maintaining the original image’s integrity while allowing containers to make changes as needed.
 
+![alt text](image.png)
+
 ## What Does "Running an Image" Mean?
 
 Running an image refers to the process of starting a container from that image. When we say "run an image," we are talking about allocating necessary resources such as compute power, memory, and storage to the container. The container then uses these resources to operate independently of the host system and other containers.

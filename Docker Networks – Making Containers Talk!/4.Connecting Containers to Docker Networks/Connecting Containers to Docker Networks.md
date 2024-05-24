@@ -51,7 +51,7 @@ In this demonstration, we will connect a container to a Docker network. We'll st
      ![connection check](./images/out-45.png)
      ![connection check](./images/out-4.png)
 
-     `my-bridge` has the `container ID` ,which is provided when `my-ubuntu` container was created.
+     `my-bridge` has the `container ID` ,which was provided when `my-ubuntu` container was created.
 
      
 

@@ -5,18 +5,21 @@ In this demonstration, we will create and explore Docker networks using the `doc
 
 ### Creating the First Docker Network
    - Use the `docker network create` command to create a bridge network named `my-bridge`:
+
      ```
      docker network create --driver bridge my-bridge
      ```
 
 ### Creating Another Docker Network with Additional Parameters
    - Create a second bridge network named `my-bridge-1` with additional parameters such as subnet and IP range:
+
      ```
      docker network create --driver bridge --subnet 172.19.0.0/16 --ip-range 172.19.0.0/24 my-bridge-1
      ```
 
 ### Listing Available Docker Networks
    - View all available networks, including the default ones:
+
      ```
      docker network ls
      ```
@@ -24,7 +27,9 @@ In this demonstration, we will create and explore Docker networks using the `doc
      ![docker-network-output](./images/out-1.png)
 
 ### Filtering Docker Networks
+
    - Filter the list to display only bridge networks:
+   
      ```
      docker network ls --filter driver=bridge
      ```

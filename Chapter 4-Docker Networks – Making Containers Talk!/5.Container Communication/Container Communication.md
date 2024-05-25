@@ -34,17 +34,23 @@ This command creates a new bridge network named `net-bridge` with the specified 
 Run a container named `cont_database` from the `redis` image and connect it to `net-bridge` network:
 
 ```bash
-docker run -d --name cont_database --network net-bridge redis
+docker run -d --name cont_database redis
 ```
 
-This command runs a new container named `cont_database` from the `redis` image in detached mode, connecting it to `net-bridge`.
+This command runs a new container named `cont_database` from the `redis` image in detached mode.
+
+Now connect the `cont_database
+
+```bash
+docker network connect net-bridge cont_database
+```
 
 Fetch its IP address:
 
 ```bash
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' cont_database
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{"\n"}}{{end}}' cont_database
 ```
-This command retrieves the IP address of the `cont_database` container.
+This command retrieves the IP addresses of the `cont_database` container.
 
 ![connection check](./images/out-6.png)
 #### Run `server-A` Container
@@ -73,6 +79,8 @@ Inspect the `net-bridge` network to see which containers are connected:
 docker network inspect net-bridge
 ```
 This command provides detailed information about the `net-bridge` network, including connected containers.
+
+![connection check](./images/out-11.png)
 
 ### 5. Run `server-B` Container
 
@@ -113,16 +121,20 @@ This command updates the package list and installs the `ping` utility inside the
 Ping Google to check external connectivity:
 
 ```bash
-ping google.com
+ping google.com -c 5
 ```
 This command pings Google to test external connectivity from the container.
+
+![connection check](./images/out-10.png)
 
 Ping `server-A` to check internal connectivity within the same network:
 
 ```bash
-ping 172.20.240.2
+ping 172.20.240.2 -c 5
 ```
 This command pings `server-A` to test internal connectivity within the `net-bridge` network.
+
+![connection check](./images/out-9.png)
 
 #### Verify `server-A` Container Connectivity
 
@@ -136,10 +148,12 @@ This command opens an interactive shell session inside the `server-A` container.
 Ping Google and `cont_database`:
 
 ```bash
-ping google.com
-ping 172.20.240.1
+ping google.com -c 2
+ping 172.20.240.1 -c 2
 ```
 These commands ping Google and `cont_database` to test external and internal connectivity.
+
+![connection check](./images/out-13.png)
 
 #### Verify `server-B` Container Connectivity
 
@@ -153,17 +167,21 @@ This command opens an interactive shell session inside the `server-B` container.
 Ping Google to check external connectivity:
 
 ```bash
-ping google.com
+ping google.com -c 3
 ```
 This command pings Google to test external connectivity from the container.
+
+![connection check](./images/out-14.png)
 
 Ping `server-A` and `cont_database` (expected to fail since they are on a different network):
 
 ```bash
-ping 172.20.240.2
-ping 172.20.240.1
+ping 172.20.240.2 -c 5
+ping 172.20.240.1 -c 5
 ```
 These commands ping `server-A` and `cont_database` to test internal connectivity, which should fail due to different networks.
+
+![connection check](./images/out-12.png)
 
 ## Summary
 

@@ -83,3 +83,4 @@ Test the game to ensure it works properly. You can use the arrow keys or swipe g
 In this demo, we successfully cloned the official open-source 2048 game repository and ran it in a containerized environment using Docker and Nginx. The bind-mount feature allowed us to replace the default Nginx `index.html` with the game's `index.html`, enabling us to play the game in a web browser at `http://localhost:8080`.
 
 Go ahead and try it yourself for a fun and interactive experience!
+

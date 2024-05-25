@@ -56,6 +56,7 @@ In this demonstration, we will connect a container to a Docker network. We'll st
      ```
      docker network inspect my-bridge
      ```
+     
      ![connection check](./images/out-45.png)
      ![connection check](./images/out-4.png)
 

@@ -37,6 +37,8 @@ The Docker Registry is a storage and distribution system for Docker Images. It s
 
 The Docker Client communicates with the Docker daemon bi-directionally, sending requests and receiving results. Similarly, the Docker daemon interacts with the Docker Registry to push and pull images.
 
+![alt text](<Docker architecture.PNG>)
+
 ## Summary of Docker Architecture
 
 - **Docker Client:** Sends requests via Docker CLI and APIs, and receives results for display.

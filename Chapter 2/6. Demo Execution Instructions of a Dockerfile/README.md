@@ -4,14 +4,19 @@ In this demo, we will explore the `ENTRYPOINT` and `CMD` instructions in a Docke
 
 ## Step 1: Navigate to the Directory and List Contents
 
-We begin in the `S2` directory and navigate to the `D-5` directory to locate our Dockerfile.
+We begin in the `CC_Docker` directory and navigate to the `D-3` directory to locate our Dockerfile.
 
 ```sh
-cd S2/D-5
-ls
+cd CC_Docker/D-3
 ```
 
 ## Step 2: Open the Dockerfile
+
+Create an empty Dockerfile using the `touch` command.
+
+```sh
+touch Dockerfile
+```
 
 Open the Dockerfile in a text editor such as `nano`.
 
@@ -103,6 +108,8 @@ docker run --name cont_entry-cmd img_entry-cmd
 ```
 
 The container will ping `localhost` 5 times as per the ENTRYPOINT and CMD instructions. 
+
+![alt text](ping-localhost.PNG)
 
 ## Step 8: Verify Container Execution
 

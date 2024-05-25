@@ -1,10 +1,10 @@
-# Creating Your First Dockerfile: Step-by-Step Guide
+# Creating Our First Dockerfile: Step-by-Step Guide
 
 In this guide, we will create our first Dockerfile and explore its fundamental instructions. The Dockerfile is an essential component for defining how a Docker image is built. Follow these steps to get started:
 
 ## Step 1: Verify Current Directory
 
-First, verify your current working directory. If we are in a user directory, such as `/home/dhwani`, we should navigate to the provided `CC_Docker` directory after downloading and unzipping the course material.
+First, verify your current working directory. If we are in a user directory, such as `/home/nabil`.
 
 ```sh
 pwd
@@ -12,30 +12,14 @@ pwd
 
 ## Step 2: Navigate to the `CC_Docker` Directory
 
-Use the `ls` command to list the contents and ensure the `CC_Docker` directory is present. Then, navigate to it.
+Use the `ls` command to list the contents and ensure the `CC_Docker` directory is present. Then, navigate to it otherwise make a directory named `CC_Docker`.
 
 ```sh
 ls
 cd CC_Docker
 ```
 
-## Step 3: Navigate to the Module Directory
-
-The `CC_Docker` directory contains subdirectories for each module. Navigate to the `S2` directory, which contains the necessary files for this segment.
-
-```sh
-cd S2
-```
-
-## Step 4: Navigate to the Demo Directory
-
-Within `S2`, navigate to the `D-1` directory. This directory contains a pre-written Dockerfile for the demo, but we will create a new one to understand the process.
-
-```sh
-cd D-1
-```
-
-## Step 5: Create an Empty Dockerfile
+## Step 3: Create an Empty Dockerfile
 
 Create an empty Dockerfile using the `touch` command.
 
@@ -43,7 +27,7 @@ Create an empty Dockerfile using the `touch` command.
 touch Dockerfile
 ```
 
-## Step 6: Open and Edit the Dockerfile
+## Step 4: Open and Edit the Dockerfile
 
 Open the Dockerfile using a text editor such as `nano`. You can use any text editor you prefer.
 
@@ -51,7 +35,7 @@ Open the Dockerfile using a text editor such as `nano`. You can use any text edi
 nano Dockerfile
 ```
 
-## Step 7: Write the Dockerfile
+## Step 5: Write the Dockerfile
 
 Start writing the Dockerfile with fundamental instructions:
 
@@ -88,11 +72,11 @@ RUN apt-get update -y
 CMD ["bash"]
 ```
 
-## Step 8: Save and Exit
+## Step 6: Save and Exit
 
 Save the file and exit the text editor. In `nano`, we can do this by pressing `CTRL + O` to save and `CTRL + X` to exit.
 
-## Step 9: Build the Docker Image
+## Step 7: Build the Docker Image
 
 Use the `docker build` command to build the Dockerfile into an image. The `-t` option tags the image with a name for easy reference.
 
@@ -100,9 +84,9 @@ Use the `docker build` command to build the Dockerfile into an image. The `-t` o
 docker build -t img_from .
 ```
 
-## Step 10: Verify the Image
+## Step 8: Verify the Image
 
-Verify that the image has been created using the `docker images` command. This command lists all Docker images on our system.
+Verify that the image has been created using the `docker images` command. This command lists all Docker images on the system.
 
 ```sh
 docker images

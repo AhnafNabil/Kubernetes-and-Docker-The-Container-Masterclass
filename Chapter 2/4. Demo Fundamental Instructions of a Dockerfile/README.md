@@ -72,11 +72,11 @@ RUN apt-get update -y
 CMD ["bash"]
 ```
 
-## Step 8: Save and Exit
+## Step 6: Save and Exit
 
 Save the file and exit the text editor. In `nano`, we can do this by pressing `CTRL + O` to save and `CTRL + X` to exit.
 
-## Step 9: Build the Docker Image
+## Step 7: Build the Docker Image
 
 Use the `docker build` command to build the Dockerfile into an image. The `-t` option tags the image with a name for easy reference.
 
@@ -84,7 +84,7 @@ Use the `docker build` command to build the Dockerfile into an image. The `-t` o
 docker build -t img_from .
 ```
 
-## Step 10: Verify the Image
+## Step 8: Verify the Image
 
 Verify that the image has been created using the `docker images` command. This command lists all Docker images on our system.
 

@@ -34,23 +34,18 @@ This command creates a new bridge network named `net-bridge` with the specified 
 Run a container named `cont_database` from the `redis` image and connect it to `net-bridge` network:
 
 ```bash
-docker run -d --name cont_database redis
+docker run -d --name cont_database --network net-bridge redis
 ```
 
 This command runs a new container named `cont_database` from the `redis` image in detached mode.
 
-Now connect the `cont_database
-
-```bash
-docker network connect net-bridge cont_database
-```
 
 Fetch its IP address:
 
 ```bash
-docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{"\n"}}{{end}}' cont_database
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' cont_database
 ```
-This command retrieves the IP addresses of the `cont_database` container.
+This command retrieves the IP addresses of the `cont_database` container.D
 
 ![connection check](./images/out-6.png)
 #### Run `server-A` Container

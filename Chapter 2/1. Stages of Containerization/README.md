@@ -6,6 +6,8 @@ In the previous demonstration, we were introduced to the concept of containers a
 2. **Docker Images**: These are built from Dockerfiles and then shipped. They serve as the template for creating containers.
 3. **Containers**: These are instances that are run from Docker Images.
 
+![alt text](containerization-image.PNG)
+
 ## Understanding Docker Components
 
 ## Dockerfile
@@ -30,22 +32,3 @@ In the previous demo, we worked with an Nginx container. This involved:
 
 This demo gave us a practical understanding of Docker Images and Containers.
 
-## Docker Architecture
-
-Before diving deeper into Dockerfiles, Docker Images, and Containers, it's important to understand Docker's architecture. Docker uses a client-server architecture, comprising the following components:
-
-1. **Docker Client**: The interface through which users interact with Docker. It sends commands to the Docker Daemon.
-2. **Docker Daemon**: The background service that manages Docker objects like images, containers, networks, and volumes. It listens to Docker API requests and performs the tasks.
-3. **Docker Registry**: A storage and distribution system for Docker Images. Docker Hub is the default public registry, but private registries can also be used.
-
-The interaction between these components allows Docker to build, ship, and run applications efficiently.
-
-### Next Steps
-
-Now that we have a basic understanding of Dockerfiles, Docker Images, and Containers, as well as the architecture of Docker, we can move on to exploring these components in greater detail. In the subsequent sections, we will:
-
-- Learn how to write and optimize Dockerfiles.
-- Understand the process of building Docker Images.
-- Explore best practices for running Docker Containers.
-
-This knowledge will provide a solid foundation for working with Docker and leveraging its capabilities for containerizing applications.

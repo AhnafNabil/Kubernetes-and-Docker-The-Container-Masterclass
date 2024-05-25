@@ -105,23 +105,15 @@ Understanding the different Docker storage solutions—Volumes, Bind Mounts, and
 
 By implementing these storage solutions effectively, you can ensure data persistence and security, reducing the risk of data loss and potential job-related issues.
 
-### Summary Diagram
+## Summary Diagram
 
-```
-+-------------------+-------------------+-------------------+
-|                 Docker Storage Solutions                  |
-+-------------------+-------------------+-------------------+
-|      Volumes      |    Bind Mounts    |       tmpfs       |
-+-------------------+-------------------+-------------------+
-| 1. Isolated from  | 1. Any directory  | 1. Host memory    |
-|    host FS        |    on host        |                   |
-|                   |                   |                   |
-| 2. Secure         | 2. Flexible       | 2. Temp data      |
-|                   |                   |                   |
-| 3. Persistent     | 3. Less Secure    |                   |
-+-------------------+-------------------+-------------------+
+### Docker Storage Solutions
 
+| Volumes              | Bind Mounts          | tmpfs           |
+|----------------------|----------------------|-----------------|
+| Isolated from host FS| Any directory on host| Host memory     |
+| Secure               | Flexible             | Temp data       |
+| Persistent           | Less Secure          |                 |
 
-```
 
 By following these guidelines and understanding the diagrams, you can effectively manage Docker storage for your containerized applications.

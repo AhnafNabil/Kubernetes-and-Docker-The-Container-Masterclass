@@ -4,15 +4,19 @@ In this demo, we will further explore writing Dockerfiles by focusing on configu
 
 ## Step 1: Verify Current Directory and Navigate
 
-Ensure we are in the `S2` directory, which contains individual directories for each demo. Navigate to the `D-2` directory.
+Ensure we are in the `CC_Docker` directory, which contains individual directories for each demo. Navigate to the `D-2` directory after creating it.
 
 ```sh
-cd S2/D-2
+cd D-2
 ```
 
 ## Step 2: Open the Dockerfile
 
-In the `D-2` directory, a pre-written Dockerfile is present. Open it using a text editor such as `nano`.
+In the `D-2` directory, Create an empty Dockerfile using the `touch` command. Open it using a text editor such as `nano`.
+
+```sh
+touch Dockerfile
+```
 
 ```sh
 nano Dockerfile
@@ -41,9 +45,9 @@ The Dockerfile includes the following instructions:
 3. **ENV Instructions:** Set environment variables within the image.
 
     ```Dockerfile
-    ENV USER dhwani
+    ENV USER nabil
     ENV SHELL /bin/bash
-    ENV LOGNAME dhwani
+    ENV LOGNAME nabil
     ```
 
 4. **CMD Instruction:** Specifies the command to run within the container (covered in later demos).
@@ -114,7 +118,7 @@ Within the container, verify the environment variables and directory created by 
     echo $LOGNAME
     ```
 
-    The values should match those set in the Dockerfile (`USER=dhwani`, `SHELL=/bin/bash`, `LOGNAME=dhwani`).
+    The values should match those set in the Dockerfile (`USER=nabil`, `SHELL=/bin/bash`, `LOGNAME=nabil`).
 
 2. **Check Directory Structure:**
 

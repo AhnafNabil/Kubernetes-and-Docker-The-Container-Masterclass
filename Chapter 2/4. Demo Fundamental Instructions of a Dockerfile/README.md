@@ -86,7 +86,7 @@ docker build -t img_from .
 
 ## Step 8: Verify the Image
 
-Verify that the image has been created using the `docker images` command. This command lists all Docker images on our system.
+Verify that the image has been created using the `docker images` command. This command lists all Docker images on the system.
 
 ```sh
 docker images

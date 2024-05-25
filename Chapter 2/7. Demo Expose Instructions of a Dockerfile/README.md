@@ -2,16 +2,21 @@
 
 In this demo, we will explore several Dockerfile instructions: `RUN`, `EXPOSE`, and `CMD`. These instructions are essential for configuring a Docker container to run a specific application. Let's go through the steps to create and run a Docker container that hosts an Nginx web server.
 
-## Step 1: Navigate to the Directory and List Contents
+## Step 1: Navigate to the Directory
 
-First, navigate to the `D-6` directory and list its contents to locate the Dockerfile.
+First, navigate to the `D-4` directory.
 
 ```sh
-cd D-6
-ls
+cd CC_Docker/D-4
 ```
 
 ## Step 2: Open the Dockerfile
+
+Create an empty Dockerfile using the `touch` command.
+
+```sh
+touch Dockerfile
+```
 
 Open the Dockerfile in a text editor such as `nano`.
 
@@ -91,10 +96,10 @@ docker images
 
 ## Step 7: Run a Container from the Image
 
-Run a container based on the `img_expose` image. Use the `-itd` flags for interactive terminal mode, detached mode, and `--rm` to automatically remove the container once it stops. The `-p` flag maps the container's port 80 to the host's port 8080.
+Run a container based on the `img_expose` image. Use the `-itd` flags for interactive terminal mode, detached mode, and `--rm` to automatically remove the container once it stops. The `-p` flag maps the container's port 80 to the host's port 8081.
 
 ```sh
-docker run -itd --rm --name cont_expose -p 8080:80 img_expose
+docker run -itd --rm --name cont_expose -p 8081:80 img_expose
 ```
 
 The command provides a unique container ID upon successful execution.
@@ -107,11 +112,13 @@ Check the status of the container using the `docker ps -a` command.
 docker ps -a
 ```
 
-You should see that the container `cont_expose` is running and its port 80 is mapped to port 8080 on the host.
+You should see that the container `cont_expose` is running and its port 80 is mapped to port 8081 on the host.
 
 ## Step 9: Access the Nginx Web Server
 
-Open your web browser (e.g., Chrome) and type `http://localhost:8080` in the address bar. Press enter to see the default homepage of the Nginx web server.
+Open your web browser (e.g., Chrome) and type `http://localhost:8081` in the address bar. Press enter to see the default homepage of the Nginx web server.
+
+![alt text](nginx-localhost.PNG)
 
 ## Summary
 

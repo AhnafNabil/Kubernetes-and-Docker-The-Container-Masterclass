@@ -21,7 +21,7 @@ To see the available Namespaces in the cluster, use the following command:
 kubectl get namespaces
 ```
 
-This will list the Namespaces along with their creation times. Typically, you will see the default, kube-system, and kube-public Namespaces, which were created when the cluster was bootstrapped.
+This will list the Namespaces along with their creation times. Typically, we will see the default, kube-system, and kube-public Namespaces, which were created when the cluster was bootstrapped.
 
 ### Viewing Pods Across Namespaces
 
@@ -31,7 +31,7 @@ To list all Pods in the default Namespace, use:
 kubectl get pods
 ```
 
-This will display the Pods created in previous demos. To see Pods across all Namespaces, use:
+This will display the Pods created in default namespace. To see Pods across all Namespaces, use:
 
 ```sh
 kubectl get pods --all-namespaces

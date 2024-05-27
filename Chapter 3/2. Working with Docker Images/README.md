@@ -23,6 +23,10 @@ docker search python
 ```
 This will give us a list of Python images sorted by the number of stars. The list includes various frameworks built on top of Python since "Python" is one of the keywords. The results include descriptions of the images and whether they are official or not. For example, the official Python image is the first in the list with the most stars.
 
+Expected output:
+
+![alt text](image.png)
+
 ### Using Filters
 
 We can also filter our search results. For example, to show only official images:
@@ -38,6 +42,8 @@ Docker allows formatting the search results for better readability. For example,
 docker search python --format "table {{.Name}}\t{{.Stars}}\t{{.Official}}"
 ```
 This command will create a table with three columns: Name, Stars, and whether the image is Official.
+
+![alt text](image-1.png)
 
 ## Command: `docker image`
 
@@ -78,14 +84,28 @@ To pull the latest version of the nginx image:
 ```bash
 docker pull nginx:latest
 ```
+Expected output:
+
+![alt text](image-2.png)
+
 This command downloads the latest nginx image. To pull a specific version, such as the Alpine version of nginx:
 ```bash
 docker pull nginx:alpine
 ```
+
+Expected output:
+
+![alt text](image-3.png)
+
 Listing the nginx images on the host will now show both versions:
 ```bash
 docker image ls nginx
 ```
+
+Expected output:
+
+![alt text](image-4.png)
+
 The Alpine version is smaller because the Alpine base OS itself is minimal.
 
 ### Pulling All Tags

@@ -47,20 +47,6 @@ docker volume inspect vol-busybox
 
 This command provides details such as the creation timestamp, driver type, mount point, and scope of the volume.
 
-**Diagram**:
-
-```
-+----------------------------------------------------+
-|            Docker Volume: vol-busybox              |
-+----------------------------------------------------+
-| Creation Timestamp  | 2023-05-24T12:34:56Z         |
-| Driver Type         | local                        |
-| Labels              | null                         |
-| Mountpoint          | /var/lib/docker/volumes/...  |
-| Name                | vol-busybox                  |
-| Scope               | local                        |
-+----------------------------------------------------+
-```
 
 ## Step 5: Removing Volumes
 

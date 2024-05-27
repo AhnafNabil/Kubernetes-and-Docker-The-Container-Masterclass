@@ -2,6 +2,18 @@
 
 In this demo, we will dive deeper into Docker images by using the `docker inspect` and `docker history` commands. These commands allow us to get detailed information about Docker images, which is crucial for debugging and understanding the image's build process.
 
+## Pull Docker Images
+
+To pull Docker images of ubuntu, we will use the `docker pull` command:
+
+```bash
+docker pull ubuntu:latest
+```
+
+Expected output:
+
+![alt text](image.png)
+
 ## Listing Docker Images
 
 First, let's list all of the Ubuntu images available on our local machine:
@@ -10,17 +22,9 @@ First, let's list all of the Ubuntu images available on our local machine:
 docker images ubuntu
 ```
 
-Here is a sample output:
+Expected output:
 
-```
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-ubuntu              latest              2ca708c1c9cc        3 weeks ago         73.9MB
-ubuntu              18.04               775349758637        4 months ago        64.2MB
-ubuntu              16.04               1d622ef86b13        6 months ago        122MB
-ubuntu              14.04               7a8aefca07dc        9 months ago        204MB
-```
-
-We have four Ubuntu images with different tags under the Ubuntu repository.
+![alt text](image-1.png)
 
 ## Inspecting a Docker Image
 
@@ -49,6 +53,10 @@ To access specific details, we can format the output of the `docker inspect` com
 docker inspect --format "{{.RepoTags}}:{{.RepoDigests}}" ubuntu:latest
 ```
 
+Expected output:
+
+![alt text](image-2.png)
+
 ## Saving Inspect Results to a File
 
 We can save the inspection results to a file for future reference. For example, to save the configuration details to a text file:
@@ -57,11 +65,17 @@ We can save the inspection results to a file for future reference. For example, 
 docker image inspect --format '{{json .Config}}' ubuntu:latest > inspect_report_ubuntu.txt
 ```
 
+
+
 Let's verify the file was created and check its contents:
 
 ```sh
 cat inspect_report_ubuntu.txt
 ```
+
+Expected output:
+
+![alt text](image-3.png)
 
 ## Viewing Docker Image History
 
@@ -71,21 +85,13 @@ The `docker history` command shows all the intermediate layers of an image. To v
 docker image history ubuntu:latest
 ```
 
+Expected output:
+
+![alt text](image-4.png)
+
 The output shows all the layers, their associated image IDs, sizes, and creation times.
 
-## Inspecting Custom Images
 
-Let's find the history of an image that we built locally, for example, `img_apache`:
-
-```sh
-docker image history img_apache
-```
-
-### Interpreting the Results
-
-- **Image IDs**: Layers created by Dockerfile instructions have image IDs. These are used for caching by the Docker host.
-- **Missing IDs**: Layers pulled from Docker Hub do not show image IDs to avoid environmental clashes.
-- **Creation Times**: Distinguish between base image layers (older) and layers created by our instructions (newer).
 
 ## Summary
 

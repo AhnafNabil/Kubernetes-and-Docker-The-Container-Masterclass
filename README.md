@@ -228,23 +228,23 @@
 | --- | --- | --- | --- |
 | 1 | [Introduction to Container Orchestration and Docker Swarm](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Intro%20to%20Container%20Orchestration%20and%20Docker%20Swarm) | Done | - |
 | 2 | [Handling Swarm Failure](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Nodefailure) | Done | - |
-| 3 | [Demo: Installing VirtualBox](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Installing%20Virtualbox) | Done | - |
+| 3 | [Demo: Installing VirtualBox](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Installing%20Virtualbox) | Done locally | - |
 | 4 | [Demo: Installing Docker Machine]() | - | - |
 | 5 | [Demo: Setting up the Swarm Cluster]() | - | - |
-| 6 | [Demo: Initializing the Swarm Cluster](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Installing%20Docker%20on%20VMs%20and%20Configuring%20Swarm) | Done | - |
-| 7 | [Demo: Working with Swarm nodes – List and Inspect]() | Done | - |
-| 8 | [Demo: Creating a Service on Swarm](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Launching%20an%20NGINX%20Service%20on%20Docker%20Swarm) | Done | - |
-| 9 | [Demo: Making a Node Leave Your Swarm](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Draining%20and%20Removing%20a%20Node) | Done | - |
-| 10 | [Demo: Scaling and Updating with Swarm](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Scaling%20and%20Updating%20Docker%20Services) | Done | - |
+| 6 | [Demo: Initializing the Swarm Cluster](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Installing%20Docker%20on%20VMs%20and%20Configuring%20Swarm) | Done locally | - |
+| 7 | [Demo: Working with Swarm nodes – List and Inspect]() | - | - |
+| 8 | [Demo: Creating a Service on Swarm](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Launching%20an%20NGINX%20Service%20on%20Docker%20Swarm) | Done locally | - |
+| 9 | [Demo: Making a Node Leave Your Swarm](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Draining%20and%20Removing%20a%20Node) | Done locally | - |
+| 10 | [Demo: Scaling and Updating with Swarm](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%207/Scaling%20and%20Updating%20Docker%20Services) | Done locally | - |
 
 ## Chapter 08
 
 | Index | Topic | Status | Issue |
 | --- | --- | --- | --- |
-| 1 | [What about the More Popular One?](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video8_1/) | - | - |
-| 2 | [Kubernetes: An Origin Story](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video8_2/) | - | - |
-| 3 | [Kubernetes: Architecture](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video8_3/) | - | - |
-| 4 | [Demo: Bootstrapping Kubernetes Cluster on Google Cloud Platform (GCP)](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video8_4/) | - | - |
+| 1 | [What about the More Popular One?]() | - | - |
+| 2 | [Kubernetes: An Origin Story]() | - | - |
+| 3 | [Kubernetes: Architecture]() | - | - |
+| 4 | [Demo: Bootstrapping Kubernetes Cluster on Google Cloud Platform (GCP)]() | - | Google Cloud  Platform issue |
 
 ## Chapter 09
 
@@ -277,13 +277,13 @@
 
 | Index | Topic | Status | Issue |
 | --- | --- | --- | --- |
-| 1 | [Introduction to Services and Service Types]() | Done | - |
-| 2 | [Demo: Working with ClusterIP Services]() | Done | - |
-| 3 | [Demo: Working with NodePort Services]() | Done | - |
-| 4 | [Introduction to Storage in Kubernetes]() | Done | - |
-| 5 | [Demo: Mounting Volume to a Pod]() | - | - |
-| 6 | [Demo: Mounting Projected Volume to a Pod – Secrets]() | - | - |
-| 7 | [Demo: Good Old MySQL WordPress Combination with Kubernetes]() | - | - |
+| 1 | [Introduction to Services and Service Types](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%2011/1.%20Intro%20to%20service%20and%20services%20type) | Done | - |
+| 2 | [Demo: Working with ClusterIP Services](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%2011/2.%20Working%20with%20clusterIp) | Done | - |
+| 3 | [Demo: Working with NodePort Services](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%2011/3.%20Working%20with%20Nodeport) | Done | - |
+| 4 | [Introduction to Storage in Kubernetes](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%2011/4.%20Intro%20to%20storage%20in%20k8s) | Done | - |
+| 5 | [Demo: Mounting Volume to a Pod](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%2011/5.%20Mounting%20volume%20to%20pod) | Done | - |
+| 6 | [Demo: Mounting Projected Volume to a Pod – Secrets](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%2011/6.%20Kubernetes%20Secrets%20and%20Projected%20Volumes) | Done | - |
+| 7 | [Demo: Good Old MySQL WordPress Combination with Kubernetes](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%2011/7.%20Good%20Old%20MySQL%20WordPress%20Combination%20with%20Kubernetes) | - | `EXTERNAL-IP` for `wp-frontend` service is showing as `<pending>` because Kubernetes is attempting to provision an external load balancer, but it hasn't been able to complete the process. |
 
 ## Chapter 12
 
@@ -294,8 +294,8 @@
 | 3 | [Demo: Rolling Updates – Rollout, Pause, Status Check](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%2012/Rolling%20Updates%20-Rollout%2CPause%2CStatus%20Check) | - | - |
 | 4 | [Introduction to Taints and Tolerations](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%2012/Introduction%20to%20Taints%20and%20Tolerations) | - | - |
 | 5 | [Demo: Scheduling Pods Using Taints]() | - | - |
-| 6 | [Demo: Autoscaling Kubernetes Cluster Using Horizontal Pod Autoscaler (HPA)]() | - | - |
-| 7 | [Demo: Deploying Apache ZooKeeper Using Kubernetes]() | - | - |
+| 6 | [Demo: Autoscaling Kubernetes Cluster Using Horizontal Pod Autoscaler (HPA)]() | - | Not running in Poridhi |
+| 7 | [Demo: Deploying Apache ZooKeeper Using Kubernetes]() | - | Not running in Poridhi |
 
 ## Chapter 13
 

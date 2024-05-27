@@ -1,7 +1,8 @@
-## Working with Kubernetes Deployments
+# Working with Kubernetes Deployments
 
 In this guide, we will explore how to work with Deployments in Kubernetes. Deployments offer a higher level of orchestration compared to ReplicaSets and provide powerful capabilities for managing applications. We will start by examining our current Pods and then proceed to create and describe a Deployment.
 
+![alt text](image.png)
 
 ##  Deployment YAML File
 
@@ -37,7 +38,6 @@ spec:
 
 ### YAML File Breakdown
 
-![alt text](image.png)
 
 Let's go through the `deployment.yaml` file section by section.
 

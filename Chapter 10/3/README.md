@@ -2,6 +2,8 @@
 
 In this guide, we will dive deep into the workings of ReplicaSets in Kubernetes. ReplicaSets are a critical component for managing and orchestrating Pods within a Kubernetes cluster. We will walk through an example YAML configuration and explain each section to give a thorough understanding of how ReplicaSets function.
 
+![alt text](image.png)
+
 ## Editing the ReplicaSet YAML File
 
 We will open our `replica-pod.yaml` file using `nano`/`vim`:

@@ -152,10 +152,10 @@
 
 | Index | Topic                                              | Status | Issue |
 |-------|----------------------------------------------------|--------|:-------:|
-| 1     | [Hello Containers]()                               | Done   | -     |
-| 2     | [Hello Docker!]()                                  | Done   | -     |
-| 3     | [Demo: Installing Docker on Linux]()               | Done   | -     |
-| 4     | [Demo: Containerizing a Simple Web Application]()  | Done   | -     |
+| 1     | [Hello Containers](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%201/5.%20Containers)                               | Done   | -     |
+| 2     | [Hello Docker!](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%201/6.%20Docker)                                  | Done   | -     |
+| 3     | [Demo: Installing Docker on Linux](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%201/7.%20Docker%20Installation)               | Done   | -     |
+| 4     | [Demo: Containerizing a Simple Web Application](https://github.com/Konami33/Kubernetes-and-Docker-The-Container-Masterclass/tree/main/Chapter%201/8.%20Containerizing%20a%20Simple%20Web%20Application)  | Done   | -     |
 
 ## Chapter 02
 

@@ -1,129 +1,157 @@
-# Managing Resource Requests and Limits in Kubernetes Pods
+# Managing Pod Resource Requests and Limits in Kubernetes
 
-In Kubernetes, you can specify how much CPU and memory (RAM) each container needs within a Pod. Setting resource requests and limits helps the scheduler make better decisions about where to place Pods and ensures that containers do not consume excessive resources, potentially crashing the node.
+## Overview
 
-## Step-by-Step Guide to Resource Management in Pods
+In this guide, we will demonstrate how to specify CPU and memory resources for containers in a Kubernetes Pod. By defining resource requests and limits, you can ensure the Kubernetes scheduler makes informed decisions about Pod placement on nodes and prevent nodes from crashing due to resource exhaustion. We will walk through an example using a Pod with two containers: a MySQL database and a WordPress frontend.
 
-### Listing Existing Pods
+## Prerequisites
 
-To begin, let's check the existing Pods in the cluster:
+- Basic knowledge of Kubernetes concepts.
+- `kubectl` command-line tool installed and configured.
+- A running Kubernetes cluster.
 
-```sh
-kubectl get pods
-```
+## Step-by-Step Guide
 
-### Examining the YAML Configuration
+### 1. Preparing the Pod Specification
 
-Let's open the YAML file that defines our resource-managed Pod:
+We begin by defining a Pod in a YAML file named `resource-pod.yaml`. This Pod includes two containers: one for a MySQL database and another for a WordPress frontend.
 
-```sh
-nano resource-pod.yaml
-```
-
-This file is slightly larger than previous examples because it defines a Pod with two containers: a MySQL database container and a WordPress frontend container. The Pod is named `frontend`.
-
-### Pod and Container Specifications
-
-#### Basic Configuration
-
-In the `resource-pod.yaml` file, you will see typical configurations such as:
-- **Pod Name**: `frontend`
-- **Containers**: Two containers, one for MySQL and one for WordPress
-- **Images**: Docker images for MySQL and WordPress
-- **Environment Variables**: Specific to the applications
-
-#### Resource Requests and Limits
-
-The key section of this YAML file is the `resources` field for each container, which specifies the resource requests and limits.
-
-Example resource specification for MySQL container:
+#### `resource-pod.yaml`:
 
 ```yaml
-resources:
-  limits:
-    memory: "128Mi"
-  requests:
-    memory: "64Mi"
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+spec:
+  containers:
+  - name: mysql
+    image: mysql:5.6
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: password
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
+  - name: wordpress
+    image: wordpress:4.8-apache
+    env:
+    - name: WORDPRESS_DB_HOST
+      value: 127.0.0.1:3306
+    - name: WORDPRESS_DB_PASSWORD
+      value: password
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
 ```
 
-This sets the maximum memory limit to 128MB and the minimum memory request to 64MB for the MySQL container.
+### 2. Creating the Pod
 
-### Creating the Pod
-
-Save and exit the file editor, then create the Pod using the following command:
+Use the `kubectl create` command to create the Pod from the YAML file:
 
 ```sh
 kubectl create -f resource-pod.yaml
 ```
 
-### Checking Pod Status
+### 3. Verifying Pod Status
 
-List the Pods to see their current status:
+Check the status of the Pod to ensure it is running:
 
 ```sh
 kubectl get pods
 ```
 
-Initially, you might see that the Pod is still in the container creation state. After some time, you might notice that the Pod status changes to `CrashLoopBackOff`. This indicates that the containers are not running as expected.
+### 4. Troubleshooting Resource Issues
 
-### Investigating the Issue
-
-To understand why the Pod is not running, use the describe command:
+If the Pod is not running correctly, we may need to inspect its status and events for any issues:
 
 ```sh
 kubectl describe pod frontend
 ```
 
-You may see that one container is running, while the other (MySQL) is terminated with a status of `OOMKilled` (Out Of Memory Killed). This means the resource limits provided are insufficient for the MySQL container.
+In this scenario, the Pod status shows that one of the containers is in a `CrashLoopBackOff` state due to an `OOMKilled` event, indicating it ran out of memory.
 
-### Troubleshooting and Resolution
+### 5. Adjusting Resource Limits
 
-To resolve this issue, delete the Pod:
+To resolve the issue, we need to increase the memory limits for both containers. Update the `resource-pod.yaml` file as follows:
+
+#### Updated `resource-pod.yaml`:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+spec:
+  containers:
+  - name: mysql
+    image: mysql:5.6
+    env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: password
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "250m"
+      limits:
+        memory: "1Gi"
+        cpu: "1"
+  - name: wordpress
+    image: wordpress:4.8-apache
+    env:
+    - name: WORDPRESS_DB_HOST
+      value: 127.0.0.1:3306
+    - name: WORDPRESS_DB_PASSWORD
+      value: password
+    resources:
+      requests:
+        memory: "256Mi"
+        cpu: "250m"
+      limits:
+        memory: "1Gi"
+        cpu: "1"
+```
+
+### 6. Recreating the Pod
+
+First, delete the existing Pod:
 
 ```sh
 kubectl delete pod frontend
 ```
 
-Then, edit the `resource-pod.yaml` file to increase the resource limits:
-
-```sh
-nano resource-pod.yaml
-```
-
-Update the resource limits for both containers. For example:
-
-```yaml
-resources:
-  limits:
-    memory: "1Gi"
-  requests:
-    memory: "512Mi"
-```
-
-Save and exit the file, then recreate the Pod:
+Then, create the Pod again with the updated resource limits:
 
 ```sh
 kubectl create -f resource-pod.yaml
 ```
 
-### Verifying the Pod Status
+### 7. Verifying Pod Status
 
-List the Pods again to verify the status:
+Check the Pod status again to ensure both containers are running smoothly:
 
 ```sh
 kubectl get pods
 ```
 
-If everything is configured correctly, the Pod should be in the `Running` state within a few seconds.
+### 8. Describing the Pod
 
-To confirm the resource limits and successful creation, describe the Pod again:
+Finally, describe the Pod to verify the resource limits have been applied:
 
 ```sh
 kubectl describe pod frontend
 ```
 
-You should see that both containers are running, and the resource limits have been applied as specified.
+We should see that both containers are running without issues, and the events indicate successful creation and running of both containers.
 
 ## Conclusion
 
-By setting appropriate resource requests and limits, you can ensure that your containers have sufficient resources to run without risking node stability. This practice helps in better resource utilization and prevents resource contention among containers in a Kubernetes cluster.
+By setting appropriate resource requests and limits for your containers, we can ensure your applications run smoothly and prevent resource-related issues. This guide demonstrated how to adjust these settings and troubleshoot common issues related to resource constraints.

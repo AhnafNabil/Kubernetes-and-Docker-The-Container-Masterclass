@@ -175,7 +175,7 @@
 ## Chapter 03
 
 | Index | Topic | Status | Issue |
-| --- | --- | --- | --- |
+|-------|--------------------------------------------------------------------------------------------------------------|--------|-------|
 | 1 | [Understanding Docker Images](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video3_2/) | Done | - |
 | 2 | [Working with Docker Images](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video3_3/) | Done | - |
 | 3 | [Demo: Know Your Docker Image, Inspect and History](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video3_4/) | Done | - |
@@ -277,13 +277,13 @@
 
 | Index | Topic | Status | Issue |
 | --- | --- | --- | --- |
-| 1 | [Introduction to Services and Service Types](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video11_1/) | - | - |
-| 2 | [Demo: Working with ClusterIP Services](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video11_2/) | - | - |
-| 3 | [Demo: Working with NodePort Services](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video11_3/) | - | - |
-| 4 | [Introduction to Storage in Kubernetes](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video11_4/) | - | - |
-| 5 | [Demo: Mounting Volume to a Pod](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video11_5/) | - | - |
-| 6 | [Demo: Mounting Projected Volume to a Pod – Secrets](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video11_6/) | - | - |
-| 7 | [Demo: Good Old MySQL WordPress Combination with Kubernetes](https://learning.oreilly.com/videos/kubernetes-and-docker/9781801075084/9781801075084-video11_7/) | - | - |
+| 1 | [Introduction to Services and Service Types]() | Done | - |
+| 2 | [Demo: Working with ClusterIP Services]() | Done | - |
+| 3 | [Demo: Working with NodePort Services]() | Done | - |
+| 4 | [Introduction to Storage in Kubernetes]() | Done | - |
+| 5 | [Demo: Mounting Volume to a Pod]() | - | - |
+| 6 | [Demo: Mounting Projected Volume to a Pod – Secrets]() | - | - |
+| 7 | [Demo: Good Old MySQL WordPress Combination with Kubernetes]() | - | - |
 
 ## Chapter 12
 
